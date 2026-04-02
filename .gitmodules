@@ -1,0 +1,3 @@
+[submodule "Libraries/kenwoodfox-kicad-libraries"]
+	path = Libraries/kenwoodfox-kicad-libraries
+	url = https://github.com/KenwoodFox/kenwoodfox-kicad-libraries

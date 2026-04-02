@@ -3402,6 +3402,17 @@
 		)
 		(uuid "523379ce-6c4f-4ff2-bc87-90fd2a2f8610")
 	)
+	(text "10K and 30K inital\n100K and 300K less loading\nmax output from PPL is very small"
+		(exclude_from_sim no)
+		(at 249.428 99.822 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "5a1665cc-a8fb-4d72-be84-32d8e97bc8b6")
+	)
 	(text "> 1/110kHz\n\n  1 / (110 kilohertz) ≈ 9.090909091 μs\n\n> ans*1.25\n\n  ans × 1.25 ≈ 11.36363636 μs\n\n> 1/ans\n\n  1 / ans = 88 kHz\n\n> 1/90kHz\n\n  1 / (90 kilohertz) ≈ 11.11111111 μs\n\n> ans*1.75\n\n  ans × 1.75 ≈ 19.44444444 μs\n\n> 1/ans\n\n  1 / ans ≈ 51.42857143 kHz\n\n> ans*.75\n\n  ans × 0.75 ≈ 38.57142857 kHz\n\n> 1/90kHz\n\n  1 / (90 kilohertz) ≈ 11.11111111 μs\n\n> ans*.75\n\n  ans × 0.75 ≈ 8.333333333 μs\n\n> 1/ans\n\n  1 / ans = 120 kHz\n\n> fmin=88kHz\n\n  save(88 kilohertz, fmin, Temporary, , 1) = 88 kHz\n\n> fmax=120kHz\n\n  save(120 kilohertz, fmax, Temporary, , 1) = 120 kHz\n\n> solve(1/(x(47pF+32pF))=fmin,x)\n\n  solve((1 / (x × ((47 picofarads) + (32 picofarads)))) = fmin) ≈ 143.8434983 kΩ\n\n> solve(1/(x(47pF+32pF))=fmax,x)\n\n  solve((1 / (x × ((47 picofarads) + (32 picofarads)))) = fmax) ≈ 105.4852321 kΩ\n\nBut then i decided i wanted 220pF\n\n> solve(1/(x(220pF+32pF))=fmin,x)\n\n  solve((1 / (x × ((220 picofarads) + (32\n  picofarads)))) = fmin) ≈\n  45.09379509 kΩ\n\n> solve(1/(x(220pF+32pF))=fmax,x)\n\n  solve((1 / (x × ((220 picofarads) + (32\n  picofarads)))) = fmax) ≈\n  33.06878307 kΩ\n"
 		(exclude_from_sim no)
 		(at -90.17 152.654 0)

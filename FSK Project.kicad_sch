@@ -3226,6 +3226,16 @@
 		)
 		(uuid "89be7092-ef60-45f3-bdf6-6a8cc02dde39")
 	)
+	(text "Page 5\nfilter A"
+		(exclude_from_sim no)
+		(at 260.858 74.168 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "930e7819-4559-4863-b7a9-080a3dec5e82")
+	)
 	(text "Sets Max"
 		(exclude_from_sim no)
 		(at 45.72 93.472 0)
@@ -3328,6 +3338,12 @@
 		(uuid "43d518a9-55b7-4869-83bf-529405d0afdb")
 	)
 	(junction
+		(at 250.19 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5f20544a-74eb-4f05-a991-1283d25e6354")
+	)
+	(junction
 		(at 45.72 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3368,12 +3384,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fa4d6890-cbdd-4f76-8a7e-654b4afc5b75")
-	)
-	(junction
-		(at 250.19 66.04)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fdf7620b-139d-4418-b4bf-9b1101394d80")
 	)
 	(no_connect
 		(at 24.13 133.35)
@@ -3499,7 +3509,7 @@
 	)
 	(wire
 		(pts
-			(xy 250.19 66.04) (xy 250.19 73.66)
+			(xy 250.19 66.04) (xy 250.19 68.58)
 		)
 		(stroke
 			(width 0)
@@ -3719,7 +3729,7 @@
 	)
 	(wire
 		(pts
-			(xy 250.19 78.74) (xy 250.19 85.09)
+			(xy 250.19 82.55) (xy 250.19 85.09)
 		)
 		(stroke
 			(width 0)
@@ -3766,6 +3776,16 @@
 			(type default)
 		)
 		(uuid "437ff0d7-81b7-4460-ae13-b3eea854d1f1")
+	)
+	(wire
+		(pts
+			(xy 250.19 73.66) (xy 250.19 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "46d5732c-a8ca-427d-9700-140352d2366f")
 	)
 	(wire
 		(pts
@@ -6360,6 +6380,88 @@
 			(project "FSK Project"
 				(path "/504c4446-9b80-4e4d-8632-780930dde7a1"
 					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 250.19 71.12 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "479181e6-3415-447d-a10d-a9752df90f4e")
+		(property "Reference" "R19"
+			(at 252.73 69.8499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "0R"
+			(at 252.73 72.3899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
+			(at 250.19 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 250.19 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 250.19 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "606317d6-6af2-40cf-86f9-f8da33e7bf8d")
+		)
+		(pin "2"
+			(uuid "c3bbe234-018e-448b-8ed8-5ce7eaf85bdc")
+		)
+		(instances
+			(project "FSK Project"
+				(path "/504c4446-9b80-4e4d-8632-780930dde7a1"
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -9860,7 +9962,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 250.19 76.2 0)
+		(at 250.19 80.01 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9871,7 +9973,7 @@
 		(fields_autoplaced yes)
 		(uuid "b5af080a-bf13-4fe9-8932-7d535e099533")
 		(property "Reference" "C4"
-			(at 252.73 74.9362 0)
+			(at 252.73 78.7462 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9882,7 +9984,7 @@
 			)
 		)
 		(property "Value" "220pF"
-			(at 252.73 77.4762 0)
+			(at 252.73 81.2862 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9893,7 +9995,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm"
-			(at 250.19 76.2 0)
+			(at 250.19 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9904,7 +10006,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 250.19 76.2 0)
+			(at 250.19 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9915,7 +10017,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 250.19 76.2 0)
+			(at 250.19 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

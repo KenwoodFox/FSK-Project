@@ -64,10 +64,6 @@
         [
           "unconnected_items|140540000|108500000|F.Cu|4|c4e56279-4c96-490a-a22a-b461b6d991f5|4675e2fc-97c3-4ee2-b39d-9d440d3c4044",
           ""
-        ],
-        [
-          "unconnected_items|166080000|109500000|F.Cu|4|d8ef2f4e-df42-4097-8b15-8d708953b1c2|e497014a-e695-4661-ab5c-8f0c2928c28b",
-          ""
         ]
       ],
       "meta": {
@@ -687,7 +683,7 @@
         "uuid": "504c4446-9b80-4e4d-8632-780930dde7a1"
       }
     ],
-    "used_designators": "",
+    "used_designators": "D2,#PWR39,R22-23",
     "variants": []
   },
   "sheets": [

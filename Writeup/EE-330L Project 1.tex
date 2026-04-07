@@ -1,7 +1,10 @@
 \documentclass[12pt]{article}
 \usepackage{ monk }
+\usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{lipsum}
 \usepackage{qrcode}
+\usepackage{acronym}
 
 
 % Set title page details
@@ -18,8 +21,112 @@
 
 \section{Introduction}
 
-As part of this semester's Analog Lab,
+This project was given as part of the Analog Electronics lab at SNHU. The goal of the project was to design
+both an \ac{FSK} modulator and demodulator using a pair of \ac{PLL}s.
 
+A \ac{PLL} is a type of circuit that at its core, measures and reduces the phase offset between two
+incoming signals.
+
+\begin{figure}[h!]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tikzpicture}[transform shape]
+        % Paths, nodes and wires:
+        \node[shape=rectangle, draw, line width=1pt, minimum width=2.965cm, minimum height=1.465cm] at (4.5, 10.25){};
+        \node[shape=rectangle, draw, line width=1pt, minimum width=2.965cm, minimum height=1.465cm] at (8.5, 10.25){};
+        \node[shape=rectangle, draw, line width=1pt, minimum width=2.965cm, minimum height=1.465cm] at (12.5, 10.25){};
+        \node[shape=rectangle, draw, line width=1pt, minimum width=2.965cm, minimum height=1.465cm] at (8.5, 7.25){};
+        \draw[-latex] (6, 10.25) -- (7, 10.25);
+        \draw[-latex] (10, 10.25) -- (11, 10.25);
+        \draw[-latex] (14, 10.25) -- (16, 10.25);
+        \draw[-latex] (15, 10.25) |- (10, 7.25);
+        \draw[-latex] (1.5, 10.5) -- (3, 10.5);
+        \draw[-latex] (7, 7.25) -| (1.5, 10) -- (3, 10);
+        \node[shape=rectangle, minimum width=2.965cm, minimum height=1.465cm] at (4.5, 10.25){} node[anchor=center, align=center, text width=2.577cm, inner sep=6pt] at (4.5, 10.25){Phase Detector};
+        \node[shape=rectangle, minimum width=2.965cm, minimum height=1.465cm] at (8.5, 10.25){} node[anchor=center, align=center, text width=2.577cm, inner sep=6pt] at (8.5, 10.25){Filter};
+        \node[shape=rectangle, minimum width=2.965cm, minimum height=1.465cm] at (12.5, 10.25){} node[anchor=center, align=center, text width=2.577cm, inner sep=6pt] at (12.5, 10.25){Voltage Controlled Oscillator};
+        \node[shape=rectangle, minimum width=2.965cm, minimum height=1.465cm] at (8.5, 7.25){} node[anchor=center, align=center, text width=2.577cm, inner sep=6pt] at (8.5, 7.25){Feedback Divider};
+        \node[shape=rectangle, minimum width=0.965cm, minimum height=0.465cm] at (1.5, 11){} node[anchor=north west, align=left, text width=0.577cm, inner sep=6pt] at (1, 11.25){$F_\text{ref}$};
+        \node[shape=rectangle, minimum width=0.965cm, minimum height=0.465cm] at (16, 10.75){} node[anchor=north west, align=left, text width=0.577cm, inner sep=6pt] at (15.5, 11){$F_\text{ref}$};
+    \end{tikzpicture}%
+    }
+    \caption{Basic PLL block diagram}
+    \label{fig:pll-block}
+\end{figure}
+
+\autoref{fig:pll-block} shows a basic \ac{PLL} block diagram, in a way they are somewhat analogous to
+op-amps. However, unlike an op-amp, the \ac{PLL} measures \emph{phase} offset between the input and 
+output signals. This phase error is fed back to a \ac{VCO} to adjust its frequency until the phase 
+error is minimized. This feedback is a \emph{negative} feedback loop, meaning that the 
+produced error signal is inverse to the phase error.
+
+\section{Design Blocks}
+
+\subsection{Input signal and Level Shifting}
+
+I knew from the start that I wanted to design the FSK pair around transmitting some sort of simple, but
+useful data. And with a suggested 5V rail signal, TTL-logic via USB was the most obvious choice.
+
+There are many common baud rates for serial communication, I decided to design around 1200baud initially
+but learned later that higher baudrates were possible by increasing the \ac{PLL}'s target frequency.
+The \ac{PLL}'s loop bandwidth limits the maximum baudrate we can target, a good rule of thumb
+for symbol rate is:
+
+\begin{equation}
+    f_\text{symbol} \leq \frac{1}{10} \cdot \text{Loop Bandwidth}
+\end{equation}
+
+and at 100kHz,
+
+\begin{equation}
+    f_\text{symbol} \leq \frac{1}{10} \cdot 100k = 10kHz \approx 9600baud
+\end{equation}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/LevelShifter.png}
+    \caption{TTL to signal level shifter circuit for input adaptation}
+    \label{fig:level-shifter}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        % Draw axes
+        \draw[->] (0,0) -- (8,0) node[right] {Frequency (Hz)};
+        \draw[->] (0,0) -- (0,5.5) node[above] {Voltage (V)};
+        % X axis ticks and labels
+        \draw (0,0) -- (0,-0.15) node[below] {88k};
+        \draw (2,0) -- (2,-0.15) node[below] {92k};
+        \draw (4,0) -- (4,-0.15) node[below] {104k};
+        \draw (6,0) -- (6,-0.15) node[below] {112k};
+        \draw (8,0) -- (8,-0.15) node[below] {120k};
+        % Y axis ticks and labels
+        \draw (0,1) -- (-0.15,1) node[left] {1};
+        \draw (0,2.5) -- (-0.15,2.5) node[left] {2.5};
+        \draw (0,4.5) -- (-0.15,4.5) node[left] {4.5};
+        \draw (0,5) -- (-0.15,5) node[left] {5};
+        % Horizontal lines
+        \draw[red, dashed, thick] (0,1) -- (8,1) node[right] {};
+        \draw[red, dashed, thick] (0,4.5) -- (8,4.5) node[right] {};
+        % PLL Frequency line
+        \draw[black, dashed, thick] (0,0) -- (8,5) node[above right] {PLL Freq.};
+    \end{tikzpicture}
+    \caption{\ac{PLL} $F_\text{out}$ vs \ac{VCO} voltage.}
+    \label{fig:simple-graph}
+\end{figure}
+
+\subsection{PLL Modulator}
+
+\lipsum[1]
+
+\subsection{PLL Demodulator}
+
+\lipsum[1]
+
+\subsection{Output Filtering and Schmitt Trigger}
+
+\lipsum[1]
 
 \section{PLL Sync and Integration Speed}
 
@@ -34,6 +141,8 @@ As part of this semester's Analog Lab,
 \newpage
 \section{Resources}
 
+\subsection{Links}
+
 \begin{itemize}
  \item \qrcode[height=1in]{https://github.com/KenwoodFox/FSK-Project/} FSK Project Github
  \item \qrcode[height=1in]{https://kicanvas.org/?repo=https://github.com/KenwoodFox/FSK-Project/blob/main/FSK%20Project.kicad_sch} Schematic (KiCanvas)
@@ -41,6 +150,14 @@ As part of this semester's Analog Lab,
  \item \qrcode[height=1in]{https://www.ti.com/lit/an/slaa618/slaa618.pdf} Texas Instruments \emph{Implementation of FSK Modulation and Demodulation
 using CD74HC4046A}
 \end{itemize}
+
+\subsection{Acronyms}
+
+\begin{acronym}[PLL]
+  \acro{FSK}{frequency-shift keying}
+  \acro{PLL}{phase-locked loop}
+  \acro{VCO}{voltage-controlled oscillator}
+\end{acronym}
 
 
 

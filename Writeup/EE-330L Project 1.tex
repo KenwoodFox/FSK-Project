@@ -1,9 +1,11 @@
 \documentclass[12pt]{article}
 \usepackage{ monk }
+\usepackage{tikz}
+\usepackage{qrcode}
 
 
 % Set title page details
-\reporttitle{ Project 1 }
+\reporttitle{ Analog Project\\FSK Modulator and Demodulator }
 \class{ Timothy Monk, Ph.D.\\EE-330L }
 \studentname{ Joe Sedutto }
 \submissiondate{\today}
@@ -12,13 +14,35 @@
 \begin{document}
 \maketitle
 \tableofcontents
-% \newpage
+\newpage
 
-\exer[Question]{1}
+\section{Introduction}
 
-\mpart{a}
+As part of this semester's Analog Lab,
 
-Question 1, Part a
+
+\section{PLL Sync and Integration Speed}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/PLL Sync.png}
+    \caption{PLL Synchronization waveform}
+    \label{fig:pll-sync}
+\end{figure}
+
+
+\newpage
+\section{Resources}
+
+\begin{itemize}
+ \item \qrcode[height=1in]{https://github.com/KenwoodFox/FSK-Project/} FSK Project Github
+ \item \qrcode[height=1in]{https://kicanvas.org/?repo=https://github.com/KenwoodFox/FSK-Project/blob/main/FSK%20Project.kicad_sch} Schematic (KiCanvas)
+ \item \qrcode[height=1in]{https://kicanvas.org/?repo=https://github.com/KenwoodFox/FSK-Project/blob/main/FSK%20Project.kicad_pcb} PCB (KiCanvas)
+ \item \qrcode[height=1in]{https://www.ti.com/lit/an/slaa618/slaa618.pdf} Texas Instruments \emph{Implementation of FSK Modulation and Demodulation
+using CD74HC4046A}
+\end{itemize}
+
+
 
 
 \revision{1}

@@ -7,137 +7,133 @@ Course Schedule
 This is the most frequently referenced part of the syllabus, so it comes
 first.
 
-+-----+------+---+--------+-----+----------+----------+-------------+
-| W   | Date | # | R      | Vid | In class | Exams    | Due         |
-| eek |      |   | eading | eos |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 1   | 1/5  | 1 |        |     | Intro    |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 1   | 1/8  | 2 | 1      | 1-8 | Signals  |          | Prereq.     |
-|     |      |   | .1-1.6 |     | and      |          | Take-home   |
-|     |      |   |        |     | Am       |          |             |
-|     |      |   |        |     | plifiers |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 2   | 1/12 | 3 | 2      | 9   | Op amps  |          |             |
-|     |      |   | .1-2.3 | -11 |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 2   | 1/15 | 4 | 2      | 12  |          |          |             |
-|     |      |   | .4-2.5 | -14 |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 3   | ~~1/ | - | -      | -   | -        | -        |             |
-|     | 19~~ |   |        |     |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 3   | 1/22 | 5 | 2      | 15  |          |          |             |
-|     |      |   | .6-2.8 | -17 |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 4   | 1/26 | ~ | 3      | 18  |          |          | HW1         |
-|     |      | ~ | .1-3.3 | -19 |          |          |             |
-|     |      | 6 |        |     |          |          |             |
-|     |      | ~ |        |     |          |          |             |
-|     |      | ~ |        |     |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 4   | 1/29 | 7 | 3      | 20  | (Semicon |          |             |
-|     |      |   | .4-3.6 | -22 | ductors) |          |             |
-|     |      |   |        |     |          |          |             |
-|     |      |   |        |     | Design   |          |             |
-|     |      |   |        |     | di       |          |             |
-|     |      |   |        |     | scussion |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 5   | 2/2  | 8 | 4      | 23  | (exam)   | 1: Op    |             |
-|     |      |   | .1-4.3 | -25 |          | amps     |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 5   | ~~2  | - | -      | -   | -        | -        |             |
-|     | /5~~ |   |        |     |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 6   | 2/9  | 9 | 4      | 26  | Diodes   |          | HW2         |
-|     |      |   | .4-4.5 | -28 |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 6   | 2/12 | 1 | 4      | 29  | Diode    |          |             |
-|     |      | 0 | .6-4.7 | -32 | appl     |          |             |
-|     |      |   |        |     | ications |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 7   | 2/16 | 1 | 5      | 33  | MOSFETs  |          |             |
-|     |      | 1 | .1-5.2 | -35 |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 7   | 2/19 | 1 | 5      | 36  | (exam)   | 2:       |             |
-|     |      | 2 | .3-5.4 | -39 |          | Semico   |             |
-|     |      |   |        |     |          | nductors |             |
-|     |      |   |        |     |          | and      |             |
-|     |      |   |        |     |          | Diodes   |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 8   | 2/23 | 1 | 6      | 40  | BJTs     |          | HW3         |
-|     |      | 3 | .1-6.2 | -42 |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 8   | 2/26 | 1 | 6      | 43  |          |          |             |
-|     |      | 4 | .3-6.4 | -44 |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 9   | ~~3  | - | -      | -   | -        | -        | -           |
-|     | /2~~ |   |        |     |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 9   | ~~3  | - | -      | -   | -        | -        | -           |
-|     | /5~~ |   |        |     |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 10  | 3/9  | 1 | 7.1    | 45  | Tr       |          |             |
-|     |      | 5 |        | -46 | ansistor |          |             |
-|     |      |   |        |     | Am       |          |             |
-|     |      |   |        |     | plifiers |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 10  | 3/12 | 1 |        |     | (exam)   | 3:       | HW4         |
-|     |      | 6 |        |     |          | Tra      |             |
-|     |      |   |        |     |          | nsistors |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 11  | 3/16 | 1 | 7.2.1  | 47  |          |          |             |
-|     |      | 7 |        | -48 |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 11  | 3/19 | 1 | 7.2.2  | 49  |          |          |             |
-|     |      | 8 | -7.2.3 | -50 |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 12  | 3/23 | 1 | 7.3    | 51  |          |          |             |
-|     |      | 9 |        |     |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 12  | 3/26 | 2 |        |     | (exam)   | 4:       | HW5         |
-|     |      | 0 |        |     |          | Tr       |             |
-|     |      |   |        |     |          | ansistor |             |
-|     |      |   |        |     |          | Am       |             |
-|     |      |   |        |     |          | plifiers |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 13  | 3/30 | 2 | 7.4    | Raz |          |          |             |
-|     |      | 1 |        | avi |          |          |             |
-|     |      |   |        | 39  |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 13  | 4/2  | 2 | 7.5    | Raz |          |          |             |
-|     |      | 2 |        | avi |          |          |             |
-|     |      |   |        | 22  |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 14  | 4/6  | 2 | 8      | Raz | Current  |          | HW6         |
-|     |      | 3 | .1-8.2 | avi | sources  |          |             |
-|     |      |   |        | 2-5 |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 14  | 4/9  | 2 | 9      | Raz | Diff     |          |             |
-|     |      | 4 | .1-9.2 | avi | erential |          |             |
-|     |      |   |        | 2-8 | pairs    |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 15  | 4/13 | 2 |        |     | (exam)   | 5:       |             |
-|     |      | 5 |        |     |          | Re       |             |
-|     |      |   |        |     |          | attempts |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 15  | 4/16 | 2 | Ap     |     |          |          |             |
-|     |      | 6 | pendix |     |          |          |             |
-|     |      |   | A      |     |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 16  | 4/20 | 2 |        |     |          |          |             |
-|     |      | 7 |        |     |          |          |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
-| 16  | 4/   | 2 |        |     |          | Final    |             |
-|     | 21** | 8 |        |     |          | Exam     |             |
-+-----+------+---+--------+-----+----------+----------+-------------+
++------+------+-----+----------+--------+--------------+------------+-----------+
+| Week | Date | #   | Reading  | Videos | In class     | Exams      | Due       |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 1    | 1/5  | 1   |          |        | Intro        |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 1    | 1/8  | 2   | 1.1-1.6  | 1-8    | Signals      |            | Prereq.   |
+|      |      |     |          |        | and          |            | Take-home |
+|      |      |     |          |        | Amplifiers   |            |           |
+|      |      |     |          |        |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 2    | 1/12 | 3   | 2.1-2.3  | 9      | Op amps      |            |           |
+|      |      |     |          | -11    |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 2    | 1/15 | 4   | 2.4-2.5  | 12     |              |            |           |
+|      |      |     |          | -14    |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 3    | ~~1/ | -   | -        | -      | -            | -          |           |
+|      | 19~~ |     |          |        |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 3    | 1/22 | 5   | 2.6-2.8  | 15     |              |            |           |
+|      |      |     |          | -17    |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 4    | 1/26 | ~   | 3.1-3.3  | 18     |              |            | HW1       |
+|      |      | ~   |          | -19    |              |            |           |
+|      |      | 6   |          |        |              |            |           |
+|      |      | ~   |          |        |              |            |           |
+|      |      | ~   |          |        |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 4    | 1/29 | 7   | 3.4-3.6  | 20     | (Semicon-    |            |           |
+|      |      |     |          | -22    | ductors)     |            |           |
+|      |      |     |          |        |              |            |           |
+|      |      |     |          |        | Design       |            |           |
+|      |      |     |          |        | discussion   |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 5    | 2/2  | 8   | 4.1-4.3  | 23     | (exam)       | 1: Op      |           |
+|      |      |     |          | -25    |              | amps       |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 5    | ~~2  | -   | -        | -      | -            | -          |           |
+|      | /5~~ |     |          |        |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 6    | 2/9  | 9   | 4.4-4.5  | 26     | Diodes       |            | HW2       |
+|      |      |     |          | -28    |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 6    | 2/12 | 1   | 4.6-4.7  | 29     | Diode        |            |           |
+|      |      | 0   |          | -32    | appl         |            |           |
+|      |      |     |          |        | ications     |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 7    | 2/16 | 1   | 5.1-5.2  | 33     | MOSFETs      |            |           |
+|      |      | 1   |          | -35    |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 7    | 2/19 | 1   | 5.3-5.4  | 36     | (exam)       | 2:         |           |
+|      |      | 2   |          | -39    |              | Semico     |           |
+|      |      |     |          |        |              | nductors   |           |
+|      |      |     |          |        |              | and        |           |
+|      |      |     |          |        |              | Diodes     |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 8    | 2/23 | 1   | 6.1-6.2  | 40     | BJTs         |            | HW3       |
+|      |      | 3   |          | -42    |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 8    | 2/26 | 1   | 6.3-6.4  | 43     |              |            |           |
+|      |      | 4   |          | -44    |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 9    | ~~3  | -   | -        | -      | -            | -          | -         |
+|      | /2~~ |     |          |        |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 9    | ~~3  | -   | -        | -      | -            | -          | -         |
+|      | /5~~ |     |          |        |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 10   | 3/9  | 1   | 7.1      | 45     | Transistor   |            |           |
+|      |      | 5   |          | -46    |              |            |           |
+|      |      |     |          |        | Amplifiers   |            |           |
+|      |      |     |          |        |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 10   | 3/12 | 1   |          |        | (exam)       | 3:         | HW4       |
+|      |      | 6   |          |        |              | Tra        |           |
+|      |      |     |          |        |              | nsistors   |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 11   | 3/16 | 1   | 7.2.1    | 47     |              |            |           |
+|      |      | 7   |          | -48    |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 11   | 3/19 | 1   | 7.2.2    | 49     |              |            |           |
+|      |      | 8   | -7.2.3   | -50    |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 12   | 3/23 | 1   | 7.3      | 51     |              |            |           |
+|      |      | 9   |          |        |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 12   | 3/26 | 2   |          |        | (exam)       | 4:         | HW5       |
+|      |      | 0   |          |        |              | Transistor |           |
+|      |      |     |          |        |              |            |           |
+|      |      |     |          |        |              | Amplifiers |           |
+|      |      |     |          |        |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 13   | 3/30 | 2   | 7.4      | Raz    |              |            |           |
+|      |      | 1   |          | avi    |              |            |           |
+|      |      |     |          | 39     |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 13   | 4/2  | 2   | 7.5      | Raz    |              |            |           |
+|      |      | 2   |          | avi    |              |            |           |
+|      |      |     |          | 22     |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 14   | 4/6  | 2   | 8        | Raz    | Current      |            | HW6       |
+|      |      | 3   | .1-8.2   | avi    | sources      |            |           |
+|      |      |     |          | 2-5    |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 14   | 4/9  | 2   | 9        | Raz    | Differential |            |           |
+|      |      | 4   | .1-9.2   | avi    |              |            |           |
+|      |      |     |          | 2-8    | pairs        |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 15   | 4/13 | 2   |          |        | (exam)       | 5:         |           |
+|      |      | 5   |          |        |              | Reattempts |           |
+|      |      |     |          |        |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 15   | 4/16 | 2   | Appendix |        |              |            |           |
+|      |      | 6   |          |        |              |            |           |
+|      |      |     | A        |        |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 16   | 4/20 | 2   |          |        |              |            |           |
+|      |      | 7   |          |        |              |            |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
+| 16   | 4/   | 2   |          |        |              | Final      |           |
+|      | 21** | 8   |          |        |              | Exam       |           |
++------+------+-----+----------+--------+--------------+------------+-----------+
 
 Course schedule is subject to change at the discretion of the
 instructor. Please refer to Brightspace for all updates.
 
 ** The last session will meet on Tuesday 4/21 at 8am-10:45am in PL206AB
-
-[A close-up of a logo Description automatically generated]
 
 Campus Syllabus
 
@@ -234,377 +230,18 @@ Assignments
 
 Course grades will be determined with the following weighting:
 
-+-----------------------------------------+---------------+------------+
-| Assignment                              | Number of     | Total      |
-|                                         |               | Points     |
-|                                         | Graded Items  |            |
++------------+--------------+--------+
+| Assignment |  Number of   | Total  |
+|            |              | Points |
+|            | Graded Items |        |
 +=========================================+:=============:+:==========:+
-| Learning Targets                        | 20            | 70         |
-+-----------------------------------------+---------------+------------+
-| Final Exam                              | 1             | 30         |
-+-----------------------------------------+---------------+------------+
-| Total Course Points Possible            |               | 100        |
-+-----------------------------------------+---------------+------------+
+|       Learning Targets       | 20  | 70  |
++------------------------------+-----+-----+
+| Final Exam                   | 1   | 30  |
++------------------------------+-----+-----+
+| Total Course Points Possible |     | 100 |
++------------------------------+-----+-----+
 
 The instructor reserves the right to assign higher grades when the
 regular grading policy calculates grades that do not reflect student
 learning.
-
-Homework
-
-Homework assignments are meant to give practice in applying the theory
-and analysis techniques developed during the course. Students will
-complete several homework design projects during the course. These
-include analysis and simulation. Students are encouraged to discuss
-homework with other students but should complete them individually to
-receive the benefit.
-
-Learning Targets
-
-These learning targets will be assessed on a series of exams that will
-occur on topics as scheduled in the syllabus or otherwise announced
-ahead of time. Students may use a calculator on each exam. An equation
-sheet will be provided with exams for reference. No other resources are
-allowed on exams.
-
-Learning targets will be marked with an “EMRNI” scheme:
-
--   E: Exemplary. The final answer is correct and supported by a clear
-    solution that demonstrates understanding.
-
--   M: Meets expectations. The solution method is correct, but there is
-    a minor error in computation, transcription, or clarity. To support
-    an error is a computation error, there should be an equation with
-    variables or values that are correct.
-
--   R: Reattempt needed. There’s progress towards the answer, but there
-    are important errors or missing pieces in the solution method.
-
--   N: Needs study. An attempt was made, but there are clear and
-    significant errors that indicate learning is not complete.
-
--   I: Incomplete. Either there’s not enough written down for
-    evaluation, or the problem was not attempted.
-
-Learning targets will reappear on subsequent exams in the form of new
-problems so that there is more than one opportunity to demonstrate
-competency with each one. Each problem may assess one or more learning
-targets.
-
-The following learning targets will be assessed on a series of exams
-(the list may be updated). The table notes the first exam on which each
-learning target is assessed.
-
-  ------------------------------------------------------------------------
-   LT#  Learning Target                                         First Exam
-  ----- ------------------------------------------------------- ----------
-    1   Create and apply unilateral amplifier two-port models       1
-
-    2   Analyze ideal op amp circuits                               1
-
-    3   Analyze op-amp circuits including DC imperfections          1
-
-    4   Find frequency-amplitude limit of op amp given slew         1
-        rate and maximum output swing                           
-
-    5   Use gain-bandwidth product to find bandwidth of op-amp      1
-        circuit                                                 
-
-    6   Use proper terminology to describe semiconductor            2
-        devices including diodes and transistors                
-
-    7   Identify diodes in semiconductor structures                 2
-
-    8   Analyze diode circuits at DC using                          2
-        constant-voltage-drop model                             
-
-    9   Analyze diode circuits at DC using exponential model        2
-
-   10   Analyze dynamic circuits with large-signal diode models     2
-
-   11   Apply small-signal model of diode to find variation         2
-        around operating point                                  
-
-   12   Find MOSFET operating point, including region of            3
-        operation                                               
-
-   13   Identify and sketch transistor structures                   3
-
-   14   Find BJT operating point, including region of operation     3
-
-   15   Analyze dynamic circuits with large signal transistor       3
-        models                                                  
-
-   16   Draw appropriate small signal models of MOSFETs based       4
-        on operating point                                      
-
-   17   Draw appropriate small signal models of BJTs based on       4
-        operating point                                         
-
-   18   Find input resistance of single-transistor amplifiers       4
-
-   19   Find output resistance of single-transistor amplifiers      4
-
-   20   Find gain of single-transistor amplifiers                   4
-  ------------------------------------------------------------------------
-
-In addition to scheduled attempts at Learning Targets on exams, students
-may demonstrate competence on any Learning Target by completing the
-following steps:
-
--   Independently solving a previously provided problem for that
-    Learning Target whose solution was not provided in class.
-
--   Providing the solution to the instructor to confirm the student is
-    prepared.
-
--   Solving a new problem during office hours or other time scheduled
-    with the instructor.
-
-The learning target portion of the course grade is determined by
-counting E as 100%, M as 90%, and R, N, & I as 0%. The most successful
-attempt for each learning target will be used. The lowest two will be
-dropped.
-
-Final Exam
-
-A cumulative final exam will be administered during the lab block of the
-last week of the semester. The final exam will focus on design problems.
-
-Calculators and other Tools
-
-The resources that students are allowed access to during quizzes and
-exams are described above. Other tools are not allowed. This prohibition
-includes, but is not limited to, cell phones, tablets, laptops,
-computers of any kind, smartwatches, and smart glasses. Students are
-allowed to use a slide rule in place of a calculator.
-
-Artificial Intelligence Use by Students
-
-Students are to follow AI course policy as stated within the course
-syllabus or risk violating SNHU’s Academic Integrity Policy resulting in
-academic sanctions. Any questions regarding the use of AI to fulfill
-course requirements should be directed to the course instructor. Please
-refer to Shapiro Library to obtain the most current formatting for
-citation styles.   
-
-Prohibited Uses of AI
-
-Faculty and students may not enter any sensitive, restricted, or
-otherwise protected data into any generative AI tool or service not
-approved by the university. This information includes, but is not
-limited to:
-
-1.  Any individually identifiable student information, such as:
-
--   University Directory data.
-
--   Work produced by students to satisfy course requirements.
-
--   Student names, grades, or other academic records.
-
--   Student accommodation-related information.
-
--   SNHU ID photos.
-
-1.  Health or medical information of an identifiable individual.
-
-2.  Any intellectual property without the creator’s consent. The use of
-    generative AI may create content that infringes on others’
-    intellectual property or copyright-protected works. It also might
-    exceed the usage terms of external vendors. This includes the
-    submission of any academic materials into a generative AI tool such
-    as course syllabi, course materials and resources, assignment
-    sheets/directions, discussion board prompts, external materials, and
-    student work.
-
-You will be informed as to when, where, and how generative AI tools are
-permitted to be used in this course, along with guidance for citation.
-Any use outside of this permission will be addressed as a violation of
-SNHU’s Academic Integrity Policy.
-
-Meeting Basic Needs
-
-Students sometimes face challenges that negatively impact their lives
-(no access to a computer/internet, homelessness, food insecurity,
-financial emergencies, academic problems, mental health concerns,
-substance abuse issues, etc.).  If you experience such a hardship,
-contact CAREteam@snhu.edu for campus and community supports; the CARE
-Team helps students remain healthy and safe.
-
-Student Preferred First Name Process
-
-SNHU recognizes that some students may prefer to use a first name other
-than their legal first name to identify themselves. As long as the use
-of a preferred first name is not for misrepresentation, the university
-acknowledges that a preferred first name can and should be used wherever
-appropriate in the course of university business and education. To do
-so, a student may complete the steps to change to a preferred name using
-the following instructions. Legal names must still be used on all
-official academic records such as transcripts, financial aid
-documentation, etc. Legal names will only be changed when official
-documentation is submitted to the Office of the University Registrar
-through the Change to Biological Record form.
-
-Course Participation
-
-Course participation is at the center of learning and accomplishment and
-is required in all courses. Each student is expected to arrange a course
-schedule that minimizes conflicts with other commitments. This includes
-personal obligations, participation in athletics or other
-university-sanctioned events. Therefore, the responsibility of
-participation belongs to the student. See the Course Participation
-policy for further information.
-
-Course participation is required within the first week of the term.
-Participation in this context is defined as completing one graded
-assignment during the first week of the course. Otherwise, students will
-be administratively removed for non-participation. Students who do not
-participate during the first week may forfeit their rights to be
-reinstated into the course. Students who stop attending a course after
-the first week and who do not officially withdraw will receive a grade
-calculated based on all submitted and missed graded assignments for the
-course. Missed assignments will earn a grade of zero. See the Course
-Withdrawal Policy for further information.
-
-For students enrolled in the campus-based Intensive English Program,
-this means missing nine or more classes during one term will be
-considered excessive. Since enrollment in the Intensive English Program
-consists of three courses per day, this equals a total of three full
-days of absence during one term. 
-
-Academic Support Services & Shapiro Library
-
-The Wolak Learning Center (WLC), located on the second floor of the
-Library Learning Commons, offers drop-in peer tutoring in a variety of
-disciplines as well as individualized tutoring for students needing
-personalized assistance. In addition, the WLC offers assistance with
-study skills, such as academic reading, exam preparation, note-taking,
-etc.  Students at any level who want assistance reaching their academic
-goals are encouraged to visit the Wolak Learning Center. For more
-information, visit the Wolak Learning Center website.
-
-The Shapiro Library offers resources onsite and online and offers group
-and one-on-one instruction in information literacy, enabling students to
-define and articulate what knowledge-based resources are relevant to
-their research interests. Library staff are available to assist students
-in effectively and efficiently accessing information from credible
-sources, to compare new knowledge with prior beliefs, and to consider
-the related ethical, legal, and socio-economic issues that are inherent
-in scholarly investigation. For more information, visit the Shapiro
-Library website.
-
-Student Handbook
-
-Review the student handbook. The student handbook applies to all
-registered domestic and international undergraduate, graduate,
-full-time, and part-time students, whether taking classes on campus or
-online in any program, including competency-based or continuing
-education programs. All students are expected to familiarize themselves
-with the language of the handbook, including the student code of
-conduct, which outlines the University’s behavioral expectations,
-including on-and off-campus behavior, and the University’s academic
-integrity policy, which includes expectations and standards relating to
-coursework. The University reserves the right to make changes to the
-handbook as necessary without prior notice. The student handbook can be
-found at mysnhu.edu under Policies and Standards.
-
-Inclusivity and Belonging
-
-Southern New Hampshire University values and promotes social diversity,
-inclusivity, and social justice.  This may or will be reflected in
-SNHU’s curriculum as we embrace and practice diversity, equity, and
-inclusion (DEI) to provide the most transformative experience for our
-students, faculty, and staff. For more information on Inclusivity and
-Belonging, see the catalog.
-
-Non-Discrimination, Equal Access & Equal Opportunity
-
-To ensure equal access and equal opportunity, Southern New Hampshire
-University shall not discriminate against any individual or group
-because of race, color, creed, ethnicity, sex, religion, national
-origin, citizenship, marital or parental status, disability (including
-intellectual disability), age, gender, gender identity or expression,
-sexual orientation, pregnancy, veteran/military status, genetic
-information, or on any other legally prohibited basis. For further
-information, refer to the full Non-Discrimination, Equal Access & Equal
-Opportunity policies. Southern New Hampshire University (SNHU) is
-dedicated to providing equal access to individuals with disabilities in
-accordance with all laws and regulations. The university has adopted the
-ADA/504 Informal Complaint and Formal Grievance Procedure, providing for
-prompt and equitable resolution of complaints regarding any action
-prohibited by Section 504 or the ADA. For further information on
-accessibility support and services, visit the Campus Accessibility
-Center webpage.
-
-Academic Integrity Policy
-
-Southern New Hampshire University requires all students to adhere to
-high standards of integrity in their academic work. Activities such as
-plagiarism and cheating are not condoned by the university. Review the
-full Academic Integrity policy.
-
-Copyright Policy
-
-Southern New Hampshire University abides by the provisions of United
-States Copyright Act (Title 17 of the United States Code). Any person
-who infringes the copyright law is liable. Review the full Copyright
-policy.
-
-Use of Open Educational Materials
-
-Students may encounter openly licensed learning materials such as open
-access (OA) publications and Open Educational Resources (OER) in their
-courses. Southern New Hampshire University uses these openly licensed
-materials in compliance with the stated license terms on the material.
-Students must also ensure that any uses outside of this course follows
-the license terms of the material. The selection of these materials
-adheres to SNHU’s accepted guidelines on course material adoption. 
-
-Class Cancellations
-
-Class cancellations for in-person or synchronous online classes will be
-announced, prior to class start whenever possible, by either a faculty
-or staff member of the university. Cancellations may also be announced
-by posted notice issued by the school's dean's office. When in doubt as
-to whether a class has been cancelled, students should check with school
-administrative staff. Cancelled classes and courses can be rescheduled
-at the option of the university or instructor but are not always made
-up. In-person classes can be taught remotely if necessary. There will be
-no refund or reduction of tuition or fees when classes are cancelled or
-moved to an online format, except as otherwise required by the
-university refund policy. For further information, refer to the full
-Class Schedules, Locations, Cancellations and Modalities policy.
-
-Course Registration, Add and Drop
-
-For campus courses, students can add and drop courses up through the
-first seven days of a term without penalty. Students who miss the first
-two sessions of a class may be dropped by the instructor without prior
-notice. For further information, refer to the full Class Schedules,
-Locations, Cancellations and Modalities policy.
-
-Grades and GPA
-
-For information related to SNHU’s grading system, incomplete policy, and
-other grade information, refer to the Grade Scale and GPA policy.
-
-For specific information related to university and programmatic grade
-requirements, refer to Degree and Certificate Requirements.
-
-Grade Appeals and Academic Disputes
-
-If a student has a concern about a course, program, service, or
-instructor they are encouraged to address their concerns first with
-their instructor or advisor. If the issue cannot be resolved at that
-level students should speak to the Campus Program Coordinator/Department
-Chair. If the student is still not satisfied, then they should contact
-the appropriate Dean’s office. If the student wishes to pursue the
-matter further, then they should speak to a representative from the
-Academic Affairs Office, who will review the matter and make a final
-decision. For further information, refer to the full Grade Appeals and
-Academic Disputes policy.
-
-Southern New Hampshire University Policies
-
-More information about SNHU policies can be found on the policy page.

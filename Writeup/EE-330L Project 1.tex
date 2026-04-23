@@ -1,37 +1,64 @@
-\documentclass[12pt]{article}
-\usepackage{ monk }
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Berlin}
+
 \usepackage{graphicx}
+\usepackage{siunitx}
 \usepackage{tikz}
-\usepackage{lipsum}
 \usepackage{qrcode}
+% Do not store QR bitstrings in the .aux file (they are huge). A truncated .aux
+% from an interrupted build causes ``File ended while scanning \qr@savematrix''.
+% Tradeoff: each run recomputes QR codes (slightly slower, much more robust).
+\makeatletter
+\long\def\qr@writebinarymatrixtoauxfile#1{}%
+\makeatother
 \usepackage{acronym}
 
+% Define acronyms without printing a list (immediate; \ac{...} works on first compile).
+\newacro{FSK}{frequency-shift keying}
+\newacro{PLL}{phase-locked loop}
+\newacro{VCO}{voltage-controlled oscillator}
 
-% Set title page details
-\reporttitle{ Analog Project\\FSK Modulator and Demodulator }
-\class{ Timothy Monk, Ph.D.\\EE-330L }
-\studentname{ Joe Sedutto }
-\submissiondate{\today}
-\universityname{Southern New Hampshire University}
+\title{Analog Project}
+\subtitle{FSK Modulator and Demodulator}
+\author{Joe Sedutto}
+\institute{Southern New Hampshire University \and EE-330L --- Timothy Monk, Ph.D.}
+\date{\today}
 
 \begin{document}
-\maketitle
-\tableofcontents
-\newpage
 
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.44\textwidth}
+      \tableofcontents
+    \end{column}
+    \begin{column}{0.54\textwidth}
+      \centering
+      \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{Figures/preview.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%----------------------------------------------------------------------
 \section{Introduction}
 
-This project was given as part of the Analog Electronics lab at SNHU. The goal of the project was to design
-both an \ac{FSK} modulator and demodulator using a pair of \ac{PLL}s.
+\begin{frame}{Introduction}
+  The goal of the project was to design
+  both an \ac{FSK} modulator and demodulator using a pair of \ac{PLL}s.
 
-A \ac{PLL} is a type of circuit that at its core, measures and reduces the phase offset between two
-incoming signals.
+  \medskip
+  A \ac{PLL} is a type of circuit that,  measures and reduces the phase offset between two
+  incoming signals.
+\end{frame}
 
-\begin{figure}[h!]
+\begin{frame}[fragile]{Basic PLL block diagram}
+  \begin{figure}
     \centering
-    \resizebox{\textwidth}{!}{%
+    \resizebox{\linewidth}{!}{%
     \begin{tikzpicture}[transform shape]
-        % Paths, nodes and wires:
         \node[shape=rectangle, draw, line width=1pt, minimum width=2.965cm, minimum height=1.465cm] at (4.5, 10.25){};
         \node[shape=rectangle, draw, line width=1pt, minimum width=2.965cm, minimum height=1.465cm] at (8.5, 10.25){};
         \node[shape=rectangle, draw, line width=1pt, minimum width=2.965cm, minimum height=1.465cm] at (12.5, 10.25){};
@@ -50,117 +77,211 @@ incoming signals.
         \node[shape=rectangle, minimum width=0.965cm, minimum height=0.465cm] at (16, 10.75){} node[anchor=north west, align=left, text width=0.577cm, inner sep=6pt] at (15.5, 11){$F_\text{ref}$};
     \end{tikzpicture}%
     }
-    \caption{Basic PLL block diagram}
     \label{fig:pll-block}
-\end{figure}
+  \end{figure}
+\end{frame}
 
-\autoref{fig:pll-block} shows a basic \ac{PLL} block diagram, in a way they are somewhat analogous to
-op-amps. However, unlike an op-amp, the \ac{PLL} measures \emph{phase} offset between the input and 
-output signals. This phase error is fed back to a \ac{VCO} to adjust its frequency until the phase 
-error is minimized. This feedback is a \emph{negative} feedback loop, meaning that the 
-produced error signal is inverse to the phase error.
+%----------------------------------------------------------------------
+\section{Input}
 
-\section{Design Blocks}
+\begin{frame}{Input signal and level shifting}
+  I wanted to design the FSK pair around transmitting something simple.
+  TTL-logic via USB seemed like a good choice.
 
-\subsection{Input signal and Level Shifting}
+  \medskip
+  There are many common baud rates for serial communication; I initially designed around 9600baud.
+\end{frame}
 
-I knew from the start that I wanted to design the FSK pair around transmitting some sort of simple, but
-useful data. And with a suggested 5V rail signal, TTL-logic via USB was the most obvious choice.
-
-There are many common baud rates for serial communication, I decided to design around 1200baud initially
-but learned later that higher baudrates were possible by increasing the \ac{PLL}'s target frequency.
-The \ac{PLL}'s loop bandwidth limits the maximum baudrate we can target, a good rule of thumb
-for symbol rate is:
-
-\begin{equation}
+\begin{frame}{Symbol Rate and Bandwidth}
+  \begin{equation}
     f_\text{symbol} \leq \frac{1}{10} \cdot \text{Loop Bandwidth}
-\end{equation}
+  \end{equation}
 
-and at 100kHz,
+  at 100\,kHz\footnote{couple other factors like maximum catchup/slew rate and also the \ac{PLL} seek time},
 
-\begin{equation}
-    f_\text{symbol} \leq \frac{1}{10} \cdot 100k = 10kHz \approx 9600baud
-\end{equation}
+  \begin{equation}
+    f_\text{symbol} \leq \frac{1}{10} \cdot 100\text{k} = 10\text{kHz} \approx 9600\,\text{baud}
+  \end{equation}
+\end{frame}
 
-\begin{figure}[h!]
+\section{Level Shifter}
+\begin{frame}{level shifter}
+  \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{Figures/LevelShifter.png}
-    \caption{TTL to signal level shifter circuit for input adaptation}
+    \includegraphics[height=0.8\textheight]{Figures/LevelShifter.png}
     \label{fig:level-shifter}
-\end{figure}
+  \end{figure}
+\end{frame}
 
-\begin{figure}[h!]
+\begin{frame}[fragile]{Choosing Symbol Frequencies}
+  \begin{figure}
     \centering
+    \resizebox{0.7\linewidth}{!}{%
     \begin{tikzpicture}
-        % Draw axes
         \draw[->] (0,0) -- (8,0) node[right] {Frequency (Hz)};
         \draw[->] (0,0) -- (0,5.5) node[above] {Voltage (V)};
-        % X axis ticks and labels
         \draw (0,0) -- (0,-0.15) node[below] {88k};
         \draw (2,0) -- (2,-0.15) node[below] {92k};
         \draw (4,0) -- (4,-0.15) node[below] {104k};
         \draw (6,0) -- (6,-0.15) node[below] {112k};
         \draw (8,0) -- (8,-0.15) node[below] {120k};
-        % Y axis ticks and labels
         \draw (0,1) -- (-0.15,1) node[left] {1};
         \draw (0,2.5) -- (-0.15,2.5) node[left] {2.5};
         \draw (0,4.5) -- (-0.15,4.5) node[left] {4.5};
         \draw (0,5) -- (-0.15,5) node[left] {5};
-        % Horizontal lines
-        \draw[red, dashed, thick] (0,1) -- (8,1) node[right] {};
-        \draw[red, dashed, thick] (0,4.5) -- (8,4.5) node[right] {};
-        % PLL Frequency line
+        \draw[red, dashed, thick] (0,1) -- (8,1);
+        \draw[red, dashed, thick] (0,4.5) -- (8,4.5);
         \draw[black, dashed, thick] (0,0) -- (8,5) node[above right] {PLL Freq.};
-    \end{tikzpicture}
-    \caption{\ac{PLL} $F_\text{out}$ vs \ac{VCO} voltage.}
-    \label{fig:simple-graph}
-\end{figure}
+    \end{tikzpicture}%
+    }
+  \end{figure}
+\end{frame}
 
-\subsection{PLL Modulator}
+\section{PLL modulator}
 
-\lipsum[1]
-
-\subsection{PLL Demodulator}
-
-\lipsum[1]
-
-\subsection{Output Filtering and Schmitt Trigger}
-
-\lipsum[1]
-
-\section{PLL Sync and Integration Speed}
-
-\begin{figure}[h!]
+\begin{frame}{PLL modulator}
+  \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{Figures/PLL Sync.png}
-    \caption{PLL Synchronization waveform}
-    \label{fig:pll-sync}
-\end{figure}
+    \includegraphics[height=0.8\textheight]{Figures/Modulator.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{PLL modulator}
+  \begin{figure}
+    \centering
+    \def\ModHlCx{0.32}% center x
+    \def\ModHlCy{0.25}% center y
+    \def\ModHlW{0.08}% half-width
+    \def\ModHlH{0.08}% half-height
+    \begin{tikzpicture}
+      \node[anchor=south west, inner sep=0] (modimg) at (0,0)
+        {\includegraphics[height=0.8\textheight]{Figures/Modulator.png}};
+      \begin{scope}[x={(modimg.south east)}, y={(modimg.north west)}]
+        \draw[draw=orange!90!black, line width=1.6pt, fill=yellow!70, fill opacity=0.35, rounded corners=2pt]
+          ({\ModHlCx-\ModHlW},{\ModHlCy-\ModHlH}) rectangle ({\ModHlCx+\ModHlW},{\ModHlCy+\ModHlH});
+      \end{scope}
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{PLL modulator}
+  $R3$ and $R5$ Set the \textbf{limits} for the pll loop speeds on the (same on demodulator too)
+
+  Reducing the headroom/bandwidth for the PLL max speed helped overall
+
+  Original resistor sizes were specified for the target symbol diversity I wanted.
+
+  \begin{align}
+    R_3 &= \qty{47}{\kilo\ohm}  \qquad f_{\mathrm{min}} = \qty{84.4}{\kilo\hertz} \\
+    R_5 &= \qty{100}{\kilo\ohm} \qquad f_{\mathrm{min}} = \qty{100.0}{\kilo\hertz}
+  \end{align}
+\end{frame}
 
 
-\newpage
+\section{PLL demodulator}
+
+\begin{frame}{PLL demodulator}
+  \begin{itemize}
+    \item Demodulator was harder than the modulator
+    \item Two problems dominated, it was hard to differentiate between symbols
+    \item Getting a PLL lock was trickier especially without limiters
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{PLL demodulator}
+  \begin{figure}
+    \centering
+    \includegraphics[height=0.8\textheight]{Figures/Demodulator.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{PLL synchronization}
+  \begin{figure}
+    \centering
+    \includegraphics[height=0.8\textheight]{Figures/PLL Sync.png}
+  \end{figure}
+\end{frame}
+
+\section{Output filtering and Schmitt trigger}
+
+\begin{frame}{Schmitt trigger}
+  \begin{figure}
+    \centering
+    \includegraphics[height=0.7\textheight]{Figures/Shmitt.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Schmitt trigger}
+  \begin{figure}
+    \centering
+    \includegraphics[height=0.7\textheight]{Figures/ShmittAnnotated.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Schmitt trigger}
+  \begin{figure}
+    \centering
+    \includegraphics[height=0.7\textheight]{Figures/Shmitt.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Damping factor}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.44\textwidth}
+      $N = 1$; \quad
+      $k_\phi$\footnote{Datasheet; different passive loop filter in hardware.},
+      $k_\text{VCO}$\footnote{Datasheet; varies with frequency offset and $V_\mathrm{CC}$.}
+
+      \medskip
+      $\zeta = \num{0.707}$ target \quad $\Rightarrow$ \quad $\zeta \approx \num{0.621}$ as built
+
+      \medskip
+      {\footnotesize\textit{Note:} PC1 has better noise immunity, which influenced the loop-filter choice.}
+    \end{column}
+    \begin{column}{0.54\textwidth}
+      \centering
+      \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{Figures/Filter.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Other}
+
+\begin{frame}{Other Thoughts on the class overall}
+ \begin{itemize}
+  \item Labs were interesting and challenging
+  \item A little odd that the project counted for so much of the grade
+  \item Open ended projects was nice
+ \end{itemize}
+\end{frame}
+
+%----------------------------------------------------------------------
 \section{Resources}
 
-\subsection{Links}
+\begin{frame}[fragile]{Links}
+  \scriptsize
+  \begin{columns}[T]
+    \begin{column}{0.48\linewidth}
+      \begin{itemize}
+        \item \qrcode[height=0.5in]{https://github.com/KenwoodFox/FSK-Project/}\\FSK Project (GitHub)
+        \item \qrcode[height=0.5in]{https://kicanvas.org/?repo=https://github.com/KenwoodFox/FSK-Project/blob/main/FSK%20Project.kicad_sch}\\Schematic (KiCanvas)
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\linewidth}
+      \begin{itemize}
+        \item \qrcode[height=0.5in]{https://kicanvas.org/?repo=https://github.com/KenwoodFox/FSK-Project/blob/main/FSK%20Project.kicad_pcb}\\PCB (KiCanvas)
+        \item \qrcode[height=0.5in]{https://www.ti.com/lit/an/slaa618/slaa618.pdf}\\TI SLAA618
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
 
-\begin{itemize}
- \item \qrcode[height=1in]{https://github.com/KenwoodFox/FSK-Project/} FSK Project Github
- \item \qrcode[height=1in]{https://kicanvas.org/?repo=https://github.com/KenwoodFox/FSK-Project/blob/main/FSK%20Project.kicad_sch} Schematic (KiCanvas)
- \item \qrcode[height=1in]{https://kicanvas.org/?repo=https://github.com/KenwoodFox/FSK-Project/blob/main/FSK%20Project.kicad_pcb} PCB (KiCanvas)
- \item \qrcode[height=1in]{https://www.ti.com/lit/an/slaa618/slaa618.pdf} Texas Instruments \emph{Implementation of FSK Modulation and Demodulation
-using CD74HC4046A}
-\end{itemize}
+\begin{frame}{Acronyms}
+  \begin{description}
+    \item[FSK] frequency-shift keying
+    \item[PLL] phase-locked loop
+    \item[VCO] voltage-controlled oscillator
+  \end{description}
+\end{frame}
 
-\subsection{Acronyms}
-
-\begin{acronym}[PLL]
-  \acro{FSK}{frequency-shift keying}
-  \acro{PLL}{phase-locked loop}
-  \acro{VCO}{voltage-controlled oscillator}
-\end{acronym}
-
-
-
-
-\revision{1}
 \end{document}

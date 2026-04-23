@@ -1,0 +1,4 @@
+@default_files = ('EE-330L Project 1.tex');
+
+$pdf_mode = 1;
+$pdflatex = 'pdflatex -interaction=nonstopmode -synctex=1 %O %S';
